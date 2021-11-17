@@ -1,0 +1,15 @@
+.resultButton {
+  width: 232px;
+  height: 64px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #5d5fef;
+  border-radius: 6px;
+  color: #fff;
+  user-select: none;
+  pointer-events: inherit;
+}
+.resultButton.active {
+  cursor: pointer;
+}

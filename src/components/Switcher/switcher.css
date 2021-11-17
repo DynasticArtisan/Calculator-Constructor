@@ -1,0 +1,34 @@
+.switcher {
+  display: flex;
+  justify-content: space-between;
+  background-color: #f3f4f6;
+  border-radius: 6px;
+  padding: 1px;
+  margin-bottom: 32px;
+}
+.switcher__button {
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  border: none;
+  font-size: 14px;
+  line-height: 15px;
+  font-weight: 500;
+  padding: 8px 12px;
+  cursor: pointer;
+  color: #4d5562;
+  font-family: Inter;
+  border: 1px solid #f3f4f6;
+  user-select: none;
+}
+.switcher__button.current {
+  background-color: #fff;
+  border-radius: 5px;
+  border: 1px solid #e2e3e5;
+}
+.switcher__button > svg {
+  margin-right: 10px;
+}
+.switcher__button.current > svg > path {
+  stroke: #5d5fef;
+}

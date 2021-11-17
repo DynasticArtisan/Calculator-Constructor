@@ -1,0 +1,27 @@
+.display {
+  position: relative;
+  width: 232px;
+  height: 52px;
+  background: #f3f4f6;
+  border-radius: 6px;
+  padding: 4px 8px;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 36px;
+  line-height: 44px;
+  text-align: right;
+  user-select: none;
+  overflow: hidden;
+}
+.display__value {
+  position: absolute;
+  right: 8px;
+}
+.display__operation {
+  position: absolute;
+  left: 6px;
+  top: -14px;
+  font-size: 13px;
+  color: gray;
+}

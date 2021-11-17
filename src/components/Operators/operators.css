@@ -1,0 +1,27 @@
+.operators {
+  display: flex;
+  justify-content: space-between;
+  pointer-events: inherit;
+}
+.operators__item {
+  width: 52px;
+  height: 48px;
+  border: 1px solid #e2e3e5;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  line-height: 15px;
+  user-select: none;
+}
+.operators_Item.active {
+  cursor: pointer;
+}
+.operators__item.active:hover {
+  border: 2px solid #5d5fef;
+}
+.operators__item.active:active {
+  border: 2px solid #5d5fef;
+  background: #5d5fef;
+}
