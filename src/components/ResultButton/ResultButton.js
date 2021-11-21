@@ -1,11 +1,15 @@
-import React from 'react'
-import { useDispatch } from 'react-redux'
-import { define } from '../../redux/calculatorSlice'
 import './resultButton.css'
-const ResultButton = ({active}) => {
+import React from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { define } from '../../redux/calculatorSlice'
+import classNames from 'classnames/bind'
+import { selectConstructionMode } from '../../redux/constructionSlice'
+
+const ResultButton = () => {
     const dispatch = useDispatch()
+    const constuctor = useSelector(selectConstructionMode)
     return (
-        <div className={active ? 'resultButton active' : 'resultButton'} onClick={()=> active && dispatch(define())}>
+        <div className={classNames('resultButton', {'edit-mode': constuctor})} onClick={()=>dispatch(define())}>
             =
         </div>
     )

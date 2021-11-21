@@ -1,107 +1,33 @@
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 .App {
-  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 100vh;
   background-color: lightgray;
-  font-family: Inter;
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
   line-height: 15px;
 }
 .container {
+  display: flex;
+  justify-content: flex-end;
   width: 695px;
   height: 640px;
   background-color: white;
-  display: flex;
-  justify-content: flex-end;
   padding: 39px 80px;
 }
-.kit {
-  display: flex;
-  flex-direction: column;
-  height: 456px;
-  margin-top: 59px;
-  width: 240px;
-  margin-right: 56px;
-}
-.right {
+
+.main {
   height: 100%;
   width: 240px;
 }
 
-.kit__item {
-  padding: 4px;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.06), 0px 4px 6px rgba(0, 0, 0, 0.1);
-  border-radius: 4px;
-  margin: 6px 0;
-  cursor: grab;
-}
-.kit__item.used {
-  opacity: 0.5;
-}
-.calculator__item {
-  padding: 8px 6px;
-  pointer-events: none;
-}
-.calculator__item.active {
-  pointer-events: fill;
-}
-
-.calculator__item.over {
-  display: flex;
-  flex-direction: column;
-}
-
-.calculator {
-  display: flex;
-  flex-direction: column;
-  height: 444px;
-}
-
-.dropzone__target > span {
-  pointer-events: none;
-  font-size: 14px;
-  line-height: 17px;
-  color: #5d5fef;
-  margin-top: 13px;
-}
-.dropzone__target > p {
-  pointer-events: none;
-  font-size: 12px;
-  line-height: 15px;
-  color: #6b7280;
-  margin-top: 7px;
-}
-.dropzone__target > img {
-  pointer-events: none;
-}
-
-.dropzone__target.over {
-  background-color: #dbeafe;
-}
-.dropzone {
-  display: flex;
-  flex-direction: column;
-}
-.dropzone.over {
-  flex-grow: 1;
-}
-.dropzone__target {
-  border: 2px dashed #c4c4c4;
-  border-radius: 6px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  flex-grow: 1;
-  background-color: transparent;
-  user-select: none;
-}
-.pointerNone {
+.edit-mode {
   pointer-events: none;
 }

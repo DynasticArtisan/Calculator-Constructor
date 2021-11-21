@@ -8,8 +8,9 @@
   border-radius: 6px;
   color: #fff;
   user-select: none;
-  pointer-events: inherit;
-}
-.resultButton.active {
   cursor: pointer;
+}
+
+.resultButton:active {
+  background: #5354c5;
 }

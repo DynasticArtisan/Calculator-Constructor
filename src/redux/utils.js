@@ -3,6 +3,6 @@ export const toLogic = (str) => {
 }
 
 export const toDisplay = (num) => {
-    
-    return String(num).replace('.',',')
+    return String(parseFloat(num.toFixed(num > 1 ? 3 : 6))).replace('.',',')
 }
+

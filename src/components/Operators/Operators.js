@@ -1,25 +1,26 @@
-import React from 'react'
-import { useDispatch } from 'react-redux'
 import './operators.css'
+import React from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import { minus, plus, multi, degree } from '../../redux/calculatorSlice'
-const Operators = ({active}) => {
-    const dispatch = useDispatch()
+import classNames from 'classnames/bind'
+import { selectConstructionMode } from '../../redux/constructionSlice'
 
+const Operators = () => {
+    const dispatch = useDispatch()
+    const constructor = useSelector(selectConstructionMode)
+    const onClickHandler = (action) => {
+            dispatch(action())    
+    }
 
     return (
-        <div className='operators'>
-            <div className={active ? "operators__item active" : "operators__item"} onClick={()=>active && dispatch(degree())}>
-                /
-            </div>
-            <div className={active ? "operators__item active" : "operators__item"} onClick={()=>active && dispatch(multi())}>
-                X
-            </div>
-            <div className={active ? "operators__item active" : "operators__item"} onClick={()=>active && dispatch(minus())}>
-                -
-            </div>
-            <div className={active ? "operators__item active" : "operators__item"} onClick={()=>active && dispatch(plus())}>
-                +
-            </div>
+        <div className={classNames('operators', {'edit-mode': constructor })}>
+            <div className="operators__item" onClick={()=>onClickHandler(degree)}>/</div>
+
+            <div className="operators__item" onClick={()=>onClickHandler(multi)}>X</div>
+
+            <div className="operators__item" onClick={()=>onClickHandler(minus)}>-</div>
+
+            <div className="operators__item" onClick={()=>onClickHandler(plus)}>+</div>
         </div>
     )
 }

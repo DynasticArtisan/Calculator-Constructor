@@ -1,23 +1,28 @@
+import './numbers.css'
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { dotAllowed, pressNumber } from '../../redux/calculatorSlice'
-import './numbers.css'
+import classNames from 'classnames/bind'
+import { selectConstructionMode } from '../../redux/constructionSlice'
 
-const Numbers = ({active}) => {
+const numbers = ['9','8','7','6','5','4','3','2','1',',','0']
+
+const Numbers = () => {
     const dispatch = useDispatch()
     const isDotAllowed = useSelector(dotAllowed)
+    const constructor = useSelector(selectConstructionMode)
+
     const press = (number) => {
         if(isDotAllowed || number !== ','){
             dispatch(pressNumber(number))
         }
     }
 
-    const numbers = ['9','8','7','6','5','4','3','2','1',',','0']
     return (
-        <div className='numbers'>
-            {numbers.map(item => (
-                <div className={active ? "numbers__item active" : "numbers__item"} onClick={()=>active && press(item)}>{item}</div>
-            ))}
+        <div className={classNames('numbers', {'edit-mode': constructor})}>
+            { 
+                numbers.map(item => <div className="numbers__item" onClick={()=>press(item)}>{item}</div>)            
+            }
         </div>
     )
 }

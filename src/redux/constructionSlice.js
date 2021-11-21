@@ -15,11 +15,10 @@ export const constructionSlice = createSlice({
            state.constructionMode = !state.constructionMode
        },
        removeElement: (state, action) => {
-           state.layout = state.layout.filter(item => item != action.payload)
+           state.layout.splice(action.payload, 1)
        },
        addElement: (state, action) => {
            state.layout.splice(action.payload, 0, state.grabbed);
-           state.target = null
        },
        grab: (state, action) => {
            state.grabbed = action.payload

@@ -1,7 +1,6 @@
 .operators {
   display: flex;
   justify-content: space-between;
-  pointer-events: inherit;
 }
 .operators__item {
   width: 52px;
@@ -14,14 +13,12 @@
   font-size: 14px;
   line-height: 15px;
   user-select: none;
-}
-.operators_Item.active {
   cursor: pointer;
 }
-.operators__item.active:hover {
+.operators__item:hover {
   border: 2px solid #5d5fef;
 }
-.operators__item.active:active {
+.operators__item:active {
   border: 2px solid #5d5fef;
   background: #5d5fef;
 }

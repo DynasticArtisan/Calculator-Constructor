@@ -21,14 +21,14 @@
   border: 1px solid #f3f4f6;
   user-select: none;
 }
-.switcher__button.current {
+.switcher__button > svg {
+  margin-right: 10px;
+}
+.switcher__button--active {
   background-color: #fff;
   border-radius: 5px;
   border: 1px solid #e2e3e5;
 }
-.switcher__button > svg {
-  margin-right: 10px;
-}
-.switcher__button.current > svg > path {
+.switcher__button--active > svg > path {
   stroke: #5d5fef;
 }
